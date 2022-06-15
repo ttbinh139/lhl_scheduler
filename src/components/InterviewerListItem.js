@@ -5,7 +5,7 @@ import "components/InterviewerListItem.scss";
 
 function InterviewerListItem(props) {
   const handleClick = function() {
-    props.setInterviewer(props.id);
+    props.setInterviewer();
   };
 
   const interviewerClass = classNames("interviewers__item", {
