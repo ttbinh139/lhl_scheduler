@@ -4,6 +4,8 @@ import "components/DayListItem.scss"
 
 export default function DayListItem(props) {
   const handleClick = function() {
+    //props.setDay(props.name);
+    console.log("Clicked");
     props.setDay(props.name);
   };
 
