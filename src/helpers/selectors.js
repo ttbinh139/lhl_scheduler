@@ -20,3 +20,22 @@ export function getAppointmentsForDay(state, day) {
 
   return result;
 };
+
+export function getInterview(state, interview) {
+  /* console.log(state);
+  console.log(interview); */
+  let interviewer = null;
+
+  if (interview === null) {
+    return null;
+  }
+  
+  for (const idx in state.interviewers) {
+    if (idx == interview.interviewer) {
+      interviewer = state.interviewers[idx];
+    }
+  }
+  //console.log(interviewer);
+  interview.interviewer = interviewer;
+  return interview;
+}
