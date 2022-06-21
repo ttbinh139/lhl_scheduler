@@ -106,6 +106,7 @@ function Appointment(props) {
         onCancel={() => back()}  
         />
       )}
+      {mode === CREATE && <Form onCancel={() => back()} interviewers={[]} />}
     </article>
   );
 };
