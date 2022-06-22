@@ -1,9 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-=======
-
-
->>>>>>> parent of 49a5c8e... create/edit/delete an appoinment and error handling
 import "components/Appointment/styles.scss";
 import useVisualMode from "hooks/useVisualMode";
 
