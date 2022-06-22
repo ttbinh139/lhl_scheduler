@@ -31,11 +31,15 @@ export function getInterview(state, interview) {
   }
   
   for (const idx in state.interviewers) {
-    if (idx == interview.interviewer) {
+    if (parseInt(idx) === interview.interviewer) {
       interviewer = state.interviewers[idx];
     }
   }
   //console.log(interviewer);
-  interview.interviewer = interviewer;
-  return interview;
+  /* interview.interviewer = interviewer;
+  return interview; */
+  return {
+    ...interview,
+    interviewer: interviewer
+  }
 }

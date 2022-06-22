@@ -6,7 +6,6 @@ import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "./Appointment";
 import { getAppointmentsForDay, getInterview } from "helpers/selectors.js";
-import useVisualMode from "hooks/useVisualMode";
 
 export default function Application(props) {
   //const [days, setDays] = useState([]);
@@ -26,10 +25,10 @@ export default function Application(props) {
   //const dailyAppointments = [];
 
   const urls = {
-    "GET_DAYS":     "http://localhost:8001/api/days",
-    "GET_APPOINTMENTS": "http://localhost:8001/api/appointments",
-    "GET_INTERVIEWERS": "http://localhost:8001/api/interviewers",
-    "PUT_APPOINTMENT_API": "http://localhost:8001/api/appointments/",
+    "GET_DAYS":     "api/days",
+    "GET_APPOINTMENTS": "api/appointments",
+    "GET_INTERVIEWERS": "api/interviewers",
+    "PUT_APPOINTMENT_API": "api/appointments/",
   }
   
 
@@ -44,7 +43,7 @@ export default function Application(props) {
     })
   },[]);
   
-  const bookInterview = function(id, interview) {
+  /* const bookInterview = function(id, interview) {
     console.log(id, interview);
     const appointment = {
       ...state.appointments[id],
@@ -67,7 +66,7 @@ export default function Application(props) {
     console.log("Cancel interview - application");
     console.log(id);
     return axios.delete(urls.PUT_APPOINTMENT_API + id);
-  };
+  }; */
 
   const appointments = getAppointmentsForDay(state, state.day);
   const schedule = appointments.map((appointment) => {
